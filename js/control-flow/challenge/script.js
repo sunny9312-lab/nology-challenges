@@ -67,3 +67,4 @@ userInput = prompt("please enter date");
 userInput = "aaa"; 
 userInput = "bbb"; 
 userInput = "ccc"; 
+userInput = "ddd"; 
