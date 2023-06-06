@@ -62,3 +62,7 @@ switch (fruit) {
 
 let inputDay = true;
 userInput = prompt("please enter date");
+// userInput = prompt("please enter date");
+
+userInput = "aaa"; 
+userInput = "bbb"; 
