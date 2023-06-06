@@ -40,3 +40,25 @@ if (parseInt(userInput)){
     console.log("this is a  number");
     console.log(userInput ** 2);
 }
+
+//tell me the day
+// switch statement
+let fruit = "raspberry";
+
+switch (fruit) {
+    case "apple":
+        console.log("This is an apple");
+        break;
+    case "orange":
+        console.log("The fruit is orange");
+        break;
+    case "strawberry":
+    case "raspberry":
+        console.log("The fruit is a berry");
+        break;
+    default:
+        console.log("I don't know what fruit it is");
+}
+
+let inputDay = true;
+userInput = prompt("please enter date");
