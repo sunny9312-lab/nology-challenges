@@ -11,16 +11,16 @@
 // Or "x is equal to y"
 // Depending on the value of x and y
 
-let x = 5;
-let y = 1;
+// let x = 5;
+// let y = 1;
 
-if (x > y) {
-    console.log("x is greater than y");
-} else if (x < y) {
-    console.log("x is smaller than y");
-} else if (x === y) {
-    console.log("x is equal to y");
-}
+// if (x > y) {
+//     console.log("x is greater than y");
+// } else if (x < y) {
+//     console.log("x is smaller than y");
+// } else if (x === y) {
+//     console.log("x is equal to y");
+// }
 
 // Challenge: User Input Type
 
@@ -32,34 +32,24 @@ if (x > y) {
 // If the input is a number, it should console log that number but squared
 // If the input is a string, it should console log that input
 // If the input is anything else, the console should say "invalid input"
-let userInput = true;
+// let userInput = true;
 
-userInput = prompt("Please enter an input");
+// userInput = prompt("Please enter an input");
 
-// if (typeof userInput === "number") {
+// if (parseInt(userInput)) {
 //     console.log(userInput ** 2);
-// } else if (typeof userInput === "string") {
-//     console.log(userInput);
-// } else {
+// } else if (userInput === "true" || userInput === "false") {
 //     console.log("invalid input");
+// } else {
+//     console.log(userInput);
 // }
-
-// do we treat "true", "false", "null", "undefined" as strings or numbers?
-
-if (parseInt(userInput)) {
-    console.log(userInput ** 2);
-} else if (userInput === "true" || userInput === "false") {
-    console.log("invalid input");
-} else {
-    console.log(userInput);
-}
 
 let parent1Eye = "brown";
 let parent2Eye = "brown"; 
 let childEyeColor = "brown";
 
-parent1Eye = prompt("Please enter your eye color");
-parent2Eye = prompt("Please enter your partner's eye color");
+// parent1Eye = prompt("Please enter your eye color");
+// parent2Eye = prompt("Please enter your partner's eye color");
 
 switch (parent1Eye && parent2Eye) {
     case "brown" && "brown":
