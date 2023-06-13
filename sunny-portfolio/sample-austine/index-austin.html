@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <link rel="stylesheet" href="style.css" />
+
+        <!-- Font Awesome Icons -->
+        <script
+            src="https://kit.fontawesome.com/24b9b1a07c.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="index.js"></script>
+
+        <title>Austin Ly | Full Stack Developer</title>
+    </head>
+    <body id="home">
+        <header class="navbar">
+            <!-- Navbar Logo -->
+            <h2 class="navbar__logo">a_st_n.</h2>
+
+            <!-- Menu Container -->
+            <div class="navbar__menu">
+                <!-- Hamburger Button -->
+                <div class="navbar__menu__hBtn" onclick="toggleMenu();">
+                    <div class="navbar__menu__hBtn--bar1"></div>
+                    <div class="navbar__menu__hBtn--bar2"></div>
+                    <div class="navbar__menu__hBtn--bar3"></div>
+                </div>
+
+                <!-- Menu Links -->
+                <nav>
+                    <ul class="navbar__menu__container">
+                        <li class="navbar__menu__container__item">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="navbar__menu__container__item">
+                            <a href="#skills">Skills</a>
+                        </li>
+                        <li class="navbar__menu__container__item">
+                            <a href="#projects">Projects</a>
+                        </li>
+                        <li class="navbar__menu__container__item">
+                            <a href="#quals">Quals</a>
+                        </li>
+                        <li class="navbar__menu__container__item">
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="navbar__menu__container__item">
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Content container for everything except footer -->
+        <div class="content">
+            <!-- Landing -->
+            <section class="landing page-block">
+                <h1 class="landing__head">Hi, I'm Austin!</h1>
+                <h3 class="landing__subhead">Junior Full-Stack Developer</h3>
+                <p class="landing__text" onclick="touchHover(this);">Dentist</p>
+            </section>
+
+            <!-- Tech Skills -->
+            <section id="skills" class="skills page-block">
+                <h2 class="skills__head skills__head--left">
+                    I can code in
+                    <i
+                        class="fa-solid fa-window-minimize fa-fade"
+                        style="--fa-fade-opacity: 0"
+                    ></i>
+                </h2>
+
+                <div class="skills__card">
+                    <div class="skills__card--item">
+                        <p class="skills__card--item-text">
+                            <i
+                                class="fa-brands fa-html5 fa-2xl skills__card--item-icon"
+                            ></i>
+                            HTML5
+                        </p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-css3-alt fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">CSS3</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-sass fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">SCSS/Sass</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-js-square fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">JavaScript</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-git-square fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">git</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-java fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">Java</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-react fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">ReactJS</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-aws fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">AWS</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-solid fa-database fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">SQL</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-solid fa-leaf fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">SpringBoot</p>
+                    </div>
+                    <div class="skills__card--item">
+                        <i
+                            class="fa-brands fa-google fa-2xl skills__card--item-icon"
+                        ></i>
+                        <p class="skills__card--item-text">
+                            FireBase & FireStore
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section id="projects" class="projects page-block">
+                <h2 class="projects__head projects__head--center">
+                    I've worked on
+                    <i
+                        class="fa-solid fa-window-minimize fa-fade"
+                        style="--fa-fade-opacity: 0"
+                    ></i>
+                </h2>
+
+                <div class="projects__group">
+                    <!-- Each project is a group item -->
+                    <div class="projects__group__item">
+                        <!-- Each project has a title-card with picture, name and link -->
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="https://github.com/austnly/js-calc/raw/main/img/final.png"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">
+                                JavaScript Calculator
+                            </h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/austnly/js-calc"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                                <a
+                                    href="https://austnly.github.io/js-calc/"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-rocket"></i
+                                ></a>
+                            </div>
+                        </div>
+
+                        <!-- Each project has a description -->
+                        <p class="projects__group__item--dscrb">
+                            A project to demonstrate the use of JavaScript and
+                            DOM manipulation, by recreating the Apple calculator
+                            app on a web page.
+                        </p>
+                    </div>
+                    <div class="projects__group__item">
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="https://github.com/austnly/morse-coder/raw/main/img/final.png"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">
+                                Morse Coder
+                            </h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/austnly/morse-coder"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                                <a
+                                    href="https://austnly.github.io/morse-coder/"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-rocket"></i
+                                ></a>
+                            </div>
+                        </div>
+
+                        <p class="projects__group__item--dscrb">
+                            A project that uses objects, complex data, unit
+                            testing, and DOM manipulation in JavaScript and HTML
+                            to allow interactive translation of English text
+                            into Morse Code as well as the reverse.
+                        </p>
+                    </div>
+                    <div class="projects__group__item">
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="https://github.com/austnly/books-app/raw/main/src/assets/img/homepage.png"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">Bookle</h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/austnly/books-app"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                                <a
+                                    href="https://austnly.github.io/books-app/"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-rocket"></i
+                                ></a>
+                            </div>
+                        </div>
+
+                        <p class="projects__group__item--dscrb">
+                            A search UI for the Google Books API using React and
+                            React Router.
+                        </p>
+                    </div>
+                    <div class="projects__group__item">
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="https://github.com/austnly/react-shop/raw/main/screenshots/product.png"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">
+                                Shop dé Mo
+                            </h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/austnly/react-shop"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                                <a
+                                    href="https://austnly.github.io/react-shop/"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-rocket"></i
+                                ></a>
+                            </div>
+                        </div>
+
+                        <p class="projects__group__item--dscrb">
+                            A demo e-commerce site using Google Firestore, the
+                            React library, and React-Bootstrap.
+                        </p>
+                    </div>
+                    <div class="projects__group__item">
+                        <div class="projects__group__item--title-card">
+                            <img
+                                src="https://github.com/austnly/ausfin/raw/main/screenshots/thumbnail.png"
+                                class="projects__group__item--thumbnail"
+                                alt=""
+                            />
+                            <h3 class="projects__group__item--name">aus/fin</h3>
+                            <div class="projects__group__item--links">
+                                <a
+                                    href="https://github.com/austnly/ausfin"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-code"></i
+                                ></a>
+                                <a
+                                    href="https://austnly.github.io/ausfin/"
+                                    target="_blank"
+                                    ><i class="fa-solid fa-rocket"></i
+                                ></a>
+                            </div>
+                        </div>
+
+                        <p class="projects__group__item--dscrb">
+                            A hobby project based around creating easy to use
+                            personal finance calculators tailored for
+                            Australians (think Superannuation, HELP repayments
+                            and Tax).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="quals" class="quals page-block">
+                <!-- Studies Sub-section -->
+                <h2 class="quals__head quals__head--right">
+                    I've studied
+                    <i
+                        class="fa-solid fa-window-minimize fa-fade"
+                        style="--fa-fade-opacity: 0"
+                    ></i>
+                </h2>
+
+                <div class="quals__study">
+                    <!-- make these expandable with subjects covered -->
+                    <div class="quals__study--item">
+                        <p class="quals__study--item-text">
+                            Graduate Certificate of Information Technology
+                        </p>
+                        <p class="quals__study--item-text">2021</p>
+                        <img
+                            src="./images/macquarie-university-1.svg"
+                            width="100px"
+                            alt=""
+                            class="quals__study--item-img"
+                        />
+                    </div>
+                    <div class="quals__study--item">
+                        <p class="quals__study--item-text">
+                            Graduate Certificate in Data Analytics
+                        </p>
+                        <p class="quals__study--item-text">2021</p>
+                        <img
+                            src="./images/mit.png"
+                            width="100px"
+                            alt=""
+                            class="quals__study--item-img"
+                        />
+                    </div>
+                    <div class="quals__study--item">
+                        <p class="quals__study--item-text">
+                            Bachelor of Dental Science (Honours)
+                        </p>
+                        <p class="quals__study--item-text">2016</p>
+                        <img
+                            src="./images/uq.svg"
+                            width="100px"
+                            alt=""
+                            class="quals__study--item-img"
+                        />
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer Contact section -->
+        <footer id="about" class="about page-block">
+            <div class="about__group">
+                <!-- About Me Subsection -->
+                <div class="about-me">
+                    <h2 class="about-me__head about-me__head--left">
+                        I am
+                        <i
+                            class="fa-solid fa-window-minimize fa-fade"
+                            style="--fa-fade-opacity: 0"
+                        ></i>
+                    </h2>
+                    <div class="about-me__card">
+                        <img
+                            class="about-me__card--img"
+                            src="./images/profile-photo.jpg"
+                        />
+                        <div>
+                            <p class="about-me__card--text">
+                                I'm Austin, a dentist-turned full-stack
+                                developer based in Canberra, Australia. I love
+                                building and automating things, and learning all
+                                things tech and data.
+                            </p>
+
+                            <p class="about-me__card--text">
+                                Outside of coding, you'll probably find me
+                                watching Netflix with my cat Jasper, playing a
+                                board game or hunting down the best noodle joint
+                                in Canberra!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" class="contact">
+                    <h2 class="contact__head contact__head--center">
+                        Get In Touch
+                    </h2>
+
+                    <div class="contact__icons">
+                        <p class="contact__text">
+                            <a href="mailto:hello@astnly.com"
+                                ><i class="fa-solid fa-envelope fa-2xl"></i>
+                                hello@astnly.com</a
+                            >
+                        </p>
+
+                        <p class="contact__text">
+                            <a
+                                href="https://www.linkedin.com/in/austin-ly/"
+                                target="_blank"
+                                ><i class="fa-brands fa-linkedin fa-2xl"></i>
+                                @austin-ly</a
+                            >
+                        </p>
+                        <p class="contact__text">
+                            <a href="https://github.com/austnly" target="_blank"
+                                ><i class="fa-brands fa-github fa-2xl"></i>
+                                @austnly</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p class="about__signature">
+                Built in HTML, Sass and JS by Austin Ly.
+            </p>
+        </footer>
+    </body>
+</html>
