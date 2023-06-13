@@ -20,10 +20,19 @@
  * @param {string[]} ingredientsArr ["Bacon","Lettuce","Tomato"]
  * @return {string} "Bacon+Lettuce+Tomato"
  */
+// let outputStr = "";
 
-export const createRecipeString = (ingredientsArr) => {
-  return;
-};
+ export const createRecipeString = (ingredientsArr) => {
+//   for (let i =0; i < ingredientsArr.length ; i++){
+//     outputStr += ingredientsArr[i];
+//     outputStr += "+";
+//   }
+//   return outputStr;
+     return ingredientsArr.join("+");  //jungah
+ };
+// createRecipeString("Bacon","Lettuce","Tomato");
+//jungaj
+
 
 /**
  * A function that takes Array of Items and returns a NEW ARRAY with the first and last item in it.
@@ -32,20 +41,54 @@ export const createRecipeString = (ingredientsArr) => {
  * @return {string[]} ["Tony","Dave"]
  */
 
-export const getFirstAndLastItems = (itemsArr) => {
-  return;
-};
+// export const getFirstAndLastItems = (itemsArr) => {
 
+//   return;
+// };
+//janet
+// export const getFirstAndLastItems = (itemsArr) => {
+//   let output = [];
+//   output.push(itemsArr.slice(0, 1).toString());
+//   output.push(itemsArr.slice(-1).toString());
+//   return output;
+// };
+//roche
+export const getFirstAndLastItems = (itemsArr) => {
+  if(!Array.isArray(itemsArr) || itemsArr.length === 0) 
+  {
+    return [];
+  }
+  return [itemsArr[0] , itemsArr[itemsArr.length - 1]];
+}
+
+getFirstAndLastItems(["Tony","John","Dave"]);
+//roche
 /**
  * A function that takes an array of scores and totals the scores by looping through the array.
  *
  * @param {number[]} scoreArr [1,2,3]
  * @return {number} 6
  */
+//sunny
+// let tot = "0";
+// export const totalScores = (scoreArr) => {
+//   for (let i=0; i < scoreArr.length; i++){
+//     tot += scoreArr[i];
+    
+//   }
+//   console.log(tot);
+//   return tot;
+// };
+//inga
+ export const totalScores = (scoreArr) => {
+let total = 0
+  for (let i=0; i < scoreArr.length; ++i){
+    total+=scoreArr[i]
+  }
+  return (total);
+ };
 
-export const totalScores = (scoreArr) => {
-  return;
-};
+
 
 /**
  * Intermediate Challenges
@@ -60,8 +103,20 @@ export const totalScores = (scoreArr) => {
  */
 
 export const totalRange = (rangeMax) => {
-  return;
+  let addedScores = 0;
+  for (let i = 0; i <= rangeMax; i++) {
+    addedScores += i;
+  }
+return addedScores;
+  
 };
+
+//kai
+// let addedScores = 0;
+//     for (let i = 0; i <= rangeMax; i++) {
+//         addedScores += i;
+//     }
+//     return addedScores;
 
 /**
  * A function that takes an array and returns a NEW ARRAY where the last item has been moved to the front of the array and removed from the back.
@@ -70,8 +125,19 @@ export const totalRange = (rangeMax) => {
  * @return {string[]} ["Dave","Tony","John"]
  */
 
+// export const moveFirstAndLastItems = (itemsArr) => {
+//   return;
+// };
+
+//oscar
 export const moveFirstAndLastItems = (itemsArr) => {
-  return;
+  const lastItem = itemsArr[itemsArr.length - 1];
+
+  const resultArr = [...itemsArr];
+
+  resultArr.pop();
+  resultArr.unshift(lastItem);
+  return resultArr;
 };
 
 /**
@@ -88,10 +154,19 @@ export const moveFirstAndLastItems = (itemsArr) => {
  * @return {number[]} [1,1,1,1]
  */
 
-export const removeEvenNumbers = (numberArr) => {
-  return;
-};
 
+
+//jack
+export const removeEvenNumbers = (numberArr) => {
+const clonedNumberArr = [...numberArr]
+  let oddsArr = []
+  for (let i = 0; i < clonedNumberArr.length; i++) {
+    if (clonedNumberArr[i] % 2 === 1 ) {
+      oddsArr.push(clonedNumberArr[i])
+    } 
+  }
+  return oddsArr;
+};
 /**
  * Advanced Challenges
  */
@@ -104,10 +179,26 @@ export const removeEvenNumbers = (numberArr) => {
  * @return {number} 2
  */
 
-export const generateAverage = (numberArr) => {
-  return;
-};
+// export const generateAverage = (numberArr) => {
+//   return;
+// };
+//janet
 
+export const generateAverage = (numberArr) => {
+  let output = 0;
+
+  // Empty array check
+  if (numberArr.length === 0) {
+    return output;
+  } else {
+    // We got stuff? Let's go ahead with the calculation
+    for (const i in numberArr) {
+      output += numberArr[i];
+    }
+    output /= numberArr.length;
+    return Math.round(output);
+  }
+};
 /**
  * A function that uses a loop to reverse the order of an Array. It should return a NEW ARRAY and not Mutate the orginal array.
  *
@@ -115,10 +206,18 @@ export const generateAverage = (numberArr) => {
  * @return {number} [3,2,1]
  */
 
+// export const reverseOrder = (toReverseArr) => {
+//   return;
+// };
+//roche
 export const reverseOrder = (toReverseArr) => {
-  return;
+  let newArray = [];
+  for (let i = toReverseArr.length - 1 ; i >= 0 ; i--) {
+    newArray.push(toReverseArr[i]);
+  }
+  return newArray;
 };
-
+reverseOrder([1,2,3]);
 /**
  * Expert Challenges
  */
@@ -137,8 +236,21 @@ export const reverseOrder = (toReverseArr) => {
  * @return {string[]} ["P:1 Tony scored 45","P:2 John scored 55","P:3 Dave scored 66"]
  */
 
+// export const generateHighscores = (playersArr, scoresArr) => {
+//   return;
+// };
+
+//kenny
 export const generateHighscores = (playersArr, scoresArr) => {
-  return;
+  let result = []
+  if (playersArr.length === scoresArr.length && playersArr.length != 0 && scoresArr.length != 0) {
+    for (let i = 0; i < playersArr.length; i++) {
+      result.push(`P:${i+1} ${playersArr[i]} scored ${scoresArr[i]}`)
+    }
+  } else {
+    return "invalid inputs"
+  }
+  return result
 };
 
 /**
@@ -167,6 +279,34 @@ export const generateHighscores = (playersArr, scoresArr) => {
 //   return;
 // };
 
+// export const encryptString = (toEncrypt) => {
+//   return;
+// };
+//jack
 export const encryptString = (toEncrypt) => {
-  return;
+if (toEncrypt) {
+  let arr1 = [];
+  let arr2 = [];
+  let arr3 = [];
+
+  for (let i = 0; i < toEncrypt.length; i++) {
+    arr1.push(toEncrypt[i]);
+    i++;
+    arr2.push(toEncrypt[i]);
+    i++;
+    arr3.push(toEncrypt[i]);
+  }
+
+  return arr1.join("") + arr2.join("") + arr3.join("");
+} else {
+  return toEncrypt;
+}
 };
+//martyna   -에러 발생
+// let encStr ="";
+// for (let i =0; i <3< i++){
+//   for (let j = i; j < toEncrypt.length; j += 3){
+//     encStr += toEncrypt[j];
+//   }
+
+// }
