@@ -20,10 +20,19 @@
  * @param {number[]} numberArr [7, 7, 6, 2, 3, 2, 3]
  * @return {number} 30
  */
-
+// export const totalScoresArr = (scoresArr) => {
+//   return;
+// };
+//ysh
 export const totalScoresArr = (scoresArr) => {
-  return;
+  const total = scoresArr.reduce(function(sum, score) {
+    return sum + score;
+  }, 0);
+  return total;
 };
+
+//ysh
+
 
 /**
  * A function that turns a string into an array and uses a ARRAY ITERATOR to reverse it.
