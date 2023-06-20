@@ -20,10 +20,21 @@
  * @param {boolean[]} booleanArr [true, true, false, false, true]
  * @return {boolean[]} [true, true, true]
  */
-
+//ysh
 export const removeFalseValues = (booleanArr) => {
-  return;
+  const returnArr = [];
+  for (let i = 0; i < booleanArr.length ; i++) {
+    
+    if (booleanArr[i] === true) {
+      returnArr.push(booleanArr[i]);
+    }
+  }
+  return returnArr;
 };
+//ysh
+// export const removeFalseValues = (booleanArr) => {
+//   return;
+// };
 
 /**
  * A function that takes an array of numbers that are between 0 - 1.

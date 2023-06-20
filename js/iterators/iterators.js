@@ -132,3 +132,14 @@ const newNumbers = numbers2.map(num => num - 5);
 console.log(newNumbers);
 
 //
+console.log(myFilter(words, ((word) => word.length > 3));
+//FIND
+const fruit = ["apple", "pear"];
+const fourFruitLetterFruit = fruit.find((f)) => f.length === 4);
+console.log(fourFruitLetterFruit, "four letter frruit");
+
+const fiveFruitLetterFruit = fruit.find((f)) => f.length === 5);
+const all5FruitLetterFruit = fruit.filter((f)) => f.length === 5);
+//EVERY
+//SOME
+//forEACH

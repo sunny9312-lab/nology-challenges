@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Single Page Application</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>Single Page Application</h1>
+
+  <!-- Selectable Icons -->
+  <div class="icon-container">
+    <div class="selectable-icon" onclick="openApp('app1')">
+      <img src="icon1.png" alt="Icon 1">
+    </div>
+    <div class="selectable-icon" onclick="openApp('app2')">
+      <img src="icon2.png" alt="Icon 2">
+    </div>
+    <div class="selectable-icon" onclick="openApp('app3')">
+      <img src="icon3.png" alt="Icon 3">
+    </div>
+  </div>
+
+  <!-- Modal for displaying app content -->
+  <div id="app-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeApp()">&times;</span>
+      <div id="app-content"></div>
+    </div>
+  </div>
+
+  <!-- Selectable Menu -->
+  <div class="menu">
+    <div class="menu-item" onclick="showList()">
+      <span class="menu-icon">⚙️</span>Menu Item 1
+    </div>
+    <div class="menu-item" onclick="showList()">
+      <span class="menu-icon">📁</span>Menu Item 2
+    </div>
+    <div class="menu-item" onclick="showList()">
+      <span class="menu-icon">🔒</span>Menu Item 3
+    </div>
+  </div>
+  
+<!-- from here  -->
+
+  <div></div>
+<button class="model-btn">Modal</button>
+<div></div>
+
+<div class="modal-bg">
+    < class="modal">
+        <h2>modal window</h2>
+        <label for="name">Name: </label>
+        <input type="text" name="name">
+        <label for="email">Email: </label>
+        <input type="email" name="email">
+        <button>Subscribe</button>
+     </div>
+</div>
+
+<!-- until here -->
+
+  <!-- Current Time -->
+  <div id="current-time"></div>
+
+
+</body>
+</html>
+<!-- btn 만들고-->
+<!-- utube보고 따라함 -->
+<!-- <div></div>
+<button class="model-btn">Modal</button>
+<div></div>
+
+<div class="modal-bg">
+    < class="modal">
+        <h2>modal window</h2>
+        <label for="name">Name: </label>
+        <input type="text" name="name">
+        <label for="email">Email: </label>
+        <input type="email" name="email">
+        <button>Subscribe</button>
+     </div>
+</div> -->
