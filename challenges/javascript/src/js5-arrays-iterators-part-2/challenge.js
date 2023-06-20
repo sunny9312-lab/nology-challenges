@@ -22,9 +22,27 @@
  */
 
 export const totalScoresArr = (scoresArr) => {
+<<<<<<< HEAD
+  const total = scoresArr.reduce((sum, score) => {
+    return sum + score;
+  }, 0);
+  return total;
+};
+
+// //ysh
+// export const totalScoresArr = (scoresArr) => {
+//   const total = scoresArr.reduce(function(sum, score) {
+//     return sum + score;
+//   }, 0);
+//   return total;
+// };
+//ysh
+
+=======
   return;
 };
 
+>>>>>>> dd9150e1895751ff4f8afadc260866ee64020902
 /**
  * A function that turns a string into an array and uses a ARRAY ITERATOR to reverse it.
  * It will need to keep spaces between words.
@@ -34,9 +52,23 @@ export const totalScoresArr = (scoresArr) => {
  * @return {string} "esrever"
  */
 
+// export const reverseString = (toReverse) => {
+//   return;
+// };
+//ysh
 export const reverseString = (toReverse) => {
-  return;
+  const result = toReverse.split('').reverse().join('');
+  return result;
 };
+//ysh
+//amrutha
+// const stringArray = toReverse.split(''); 
+//   const reversedArray = stringArray.reverse(); 
+//   const reversedString = reversedArray.join(''); 
+  
+//   return reversedString;
+//amtutha
+
 
 /**
  * A function that arranges an array of characters alphabetically.
@@ -48,8 +80,21 @@ export const reverseString = (toReverse) => {
  */
 
 export const sortCharactersAlphabetically = (charcterArr) => {
-  return;
-};
+//jungah
+  return charcterArr.map((char) => char.toLowerCase()).sort();
+//jungah
+ };
+//ysh
+// const lowercaseArray = 
+// export const sortCharactersAlphabetically = (charcterArr) => {
+//   charcterArr.toLowerCase();
+//   return;
+// };
+//ysh
+
+//jungah
+//return charcterArr.map((char) => char.toLowerCase()).sort();
+//
 
 /**
  * Intemediate Challenges
@@ -62,10 +107,20 @@ export const sortCharactersAlphabetically = (charcterArr) => {
  * @return {number[]} [9190, 55, 9, 6, 2, 0.5]
  */
 
-export const sortNumbersHighToLow = (numberArr) => {
-  return;
-};
+// export const sortNumbersHighToLow = (numberArr) => {
+//   return;
+// };
+//kenny
+export const sortNumbersHighToLow = (numberArr) => 
+  numberArr
+    .sort(function(a, b){
+      return b - a;
+    })
+    .reverse() == numberArr
+     ? numberArr 
+     : numberArr.sort().reverse() ;
 
+//kenny
 /**
  * A function that checks if a given item is 'instock'.
  * You have been given a 'stocklist' in the function body.
@@ -94,7 +149,13 @@ export const checkItemInstock = (toCheck) => {
     "blueberry",
     "melon",
   ];
-  return;
+
+//kai
+return stockList.includes(toCheck)
+        ? `${toCheck} is instock, it is on aisle ${stockList.indexOf(toCheck)}.`
+        : `Sorry ${toCheck} is not instock.`;
+//kai
+  // return;
 };
 
 /**
@@ -107,10 +168,24 @@ export const checkItemInstock = (toCheck) => {
  * @return {boolean} false
  */
 
+// export const checkPrimaryColours = (coloursArr) => {
+//   return;
+// };
+//jack
 export const checkPrimaryColours = (coloursArr) => {
-  return;
-};
-
+  const primaryColours = ["red", "blue", "yellow"];
+  const booleanArr = coloursArr.map((colour) => {
+   if (primaryColours.includes(colour)) {
+    return true;
+   } else {
+    return false;
+   }
+  });
+ 
+  return booleanArr.every((val) => val === true);
+ };
+//martyna
+//const primarycolours = ["red", "blue"]
 /**
  * Advanced Challenges
  */
@@ -124,9 +199,18 @@ export const checkPrimaryColours = (coloursArr) => {
  * @return {boolean} true
  */
 
-export const checkStringPalindrome = (stringOne) => {
-  return;
-};
+// export const checkStringPalindrome = (stringOne) => {
+//   return;
+// };
+//kenny
+export const checkStringPalindrome = (stringOne) => 
+  stringOne.trim().split('').reverse().join('') === 
+  stringOne.trim();
+
+//kenny
+//martyna 한것 이해 잘됨. 다시 복사할것. 
+//let head = 0;
+
 
 /**
  * A function that totals a nested array of scores arrays.
@@ -138,9 +222,25 @@ export const checkStringPalindrome = (stringOne) => {
  * @return {number[]} [20, 7, 3]
  */
 
-export const totalNestedScoresArr = (scoresArr) => {
-  return;
+// export const totalNestedScoresArr = (scoresArr) => {
+//   return;
+// };
+
+//oscar
+export const totalNestedScoresArr = (nestedScoreArr) => {
+const totalScoresArr = nestedScoresArr.reduce((totalScores, scores) => {
+  // look into each scores array [7,7,6] of nested scores array [[7, 7, 6], [2, 3, 2]]
+  const totalScore = scores.reduce(
+    // look into each score 7 of scores array [7,7,6]
+    (totalScore, score) => (totalScore += score),
+    0
+  );
+  totalScores.push(totalScore);
+  return totalScores;
+}, []);
+return totalScoresArr;
 };
+//oscar
 
 /**
  * Expert Challenge
@@ -172,5 +272,18 @@ export const totalNestedScoresArr = (scoresArr) => {
  */
 
 export const encryptString = (toEncrypt) => {
-  return;
+  // return;
+  return toEncrypt
+    .split("")
+    .reduce(
+      (acc, curr, i) => {
+        const index = i % 3;
+        acc[index].push(curr);
+        return acc;
+      },
+      [[], [], []]
+    )
+    .flat()
+    .join("");
 };
+//jungah

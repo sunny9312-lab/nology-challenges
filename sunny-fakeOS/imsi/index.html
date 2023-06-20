@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Fake OS win98</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js" defer></script>
+  <script
+      src="https://kit.fontawesome.com/8830e31e89.js"
+      crossorigin="anonymous"
+    ></script>
+
+</head>
+<body id="home">
+  
+  
+  <!-- Selectable Icons -->
+  <div class="icon-container">
+    <div class="selectable-icon" onclick="openApp('app1')"><i class="fa-solid fa-calculator"></i>
+      Calculator
+    </div>
+    <div class="selectable-icon" onclick="openApp('app2')"><i class="fa-brands fa-internet-explorer"></i>
+      Internet Explorer
+    </div>
+    <div class="selectable-icon" onclick="openApp('app3')"><i class="fa-solid fa-magnifying-glass"></i>
+      Search
+    </div>
+        
+  </div>
+
+  <!-- Modal for displaying app content -->
+  <div id="app-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeApp()">&times;</span>
+      <div id="app-content"></div>
+    </div>
+  </div>
+
+
+
+  <!-- Current Time -->
+  <div id="current-time" class="showTime"></div>
+  
+ 
+  
+
+</body>
+</html>
+
