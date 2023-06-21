@@ -17,8 +17,16 @@
  * @returns {string[]} A list of the employees quotes for the website
  */
 export const getEmployeeQuotes = (employeeArr) => {
-  const quoteArr = employeeArr.map((employee) => employee.quote);
-  return quoteArr;
+  //ysh
+  
+  //ysh
+  //kai
+  export const getEmployeeQuotes = (employeeArr) => {
+    const quoteArr = employeeArr.map((employee) => employee.quote);
+    return quoteArr;
+};
+//kai
+  // Write code here
 };
 
 /**
@@ -28,10 +36,13 @@ export const getEmployeeQuotes = (employeeArr) => {
  * @returns {{name: string, quote: string, yearsEmployed: number, isManagement: boolean}[]} An array containing only managers
  */
 export const getTheManagers = (employeeArr) => {
-  const managerArray = employeeArr.filter((employee) => employee.isManagement);
-  return managerArray;
   // Write code here
-};
+  const manager = employeeArr.map((employee) => employee.isManagement);
+  if (manager) {
+    return employeeArr
+  }
+  };
+  //ask Jungah 내가 했는게 어떤 부분이 잘못이해 하고 있는지...
 
 /**
  * A function which tells you the number of keys on the provided object.
@@ -40,10 +51,13 @@ export const getTheManagers = (employeeArr) => {
  * @returns {number} The number of the keys on the object
  */
 export const getNumberOfKeys = (object) => {
-  return Object.keys(object).length;
-  // Write code here //다시 물어볼것.. ysh
-};
-
+  // Write code here
+  const key = object.key
+  return key
+//이 부분도 정아씨 한테 물어볼것  
+  };
+  //ysh
+  
 /* Intermediate Challenges */
 
 /**
@@ -54,16 +68,20 @@ export const getNumberOfKeys = (object) => {
  * @returns {{name: string, price: number, hasFreeShipping: boolean, quantity: number}} The most expensive item in the shopping basket
  */
 export const findMostExpensiveItem = (shoppingBasketArr) => {
+  // Write code here
+  const itemPrice = shoppingBasketArr.price
+  if itemPrice > // 전에 아이템이랑 비교해서 for문을 돌려야 하나요? 
+  // reduce문으로..
   return shoppingBasketArr.reduce((acc, curr) => {
-    if (acc.price > curr.price ) {
+    if (acc.price > curr.price) {
       return acc;
     } else {
-      return curr;
+      return curr
     }
+  });
 
-  })
-  // Write code here
-};
+};  //나는 이것은 이해가 되는데, 샘이 보여준 정답에 두번재 세번째는 잘 이해가 않됨니다..
+
 
 /**
  * A function which add a new key of totalPrice to each shopping basket item in the array where total cost is
@@ -81,12 +99,27 @@ export const findMostExpensiveItem = (shoppingBasketArr) => {
  * @returns {{name: string, price: number, hasFreeShipping: boolean, quantity: number, totalPrice: number}[]} A new array where each object has had a total price added to it
  */
 export const settotalPrice = (shoppingBasketArr) => {
-  return shoppingBasketArr.map((item) => {
+  // Write code here
+  //jungah
+  const { price, quantity } = item;
+    return { ...item, totalPrice: price * quantity };
+return shoppingBasketArr.map((item) => {
     const { price, quantity } = item;
-    return { ...item, totalPrice: price * quantity};
+    return { ...item, totalPrice: price * quantity };
   });
-  
+  //jungah
 };
+//ysh
+export const settotalPrice = (shoppingBasketArr) => {
+  const itemQuantity = shoppingBasketArr.quantity;
+  const itemPrice = shoppingBasketArr.price;
+  const totalPrice = itemQuantity * itemPrice;
+  //push하나요? 여기서? 
+  return [shoppingBasketArr, totalPrice]
+
+
+};
+//ysh
 
 /**
  * A function which sums the total cost of every item in the array and returns it as a single number.
@@ -95,13 +128,24 @@ export const settotalPrice = (shoppingBasketArr) => {
  * @returns {number} The total cost of the order
  */
 export const totalShoppingBasket = (shoppingBasketArr) => {
+  //ysh
   return shoppingBasketArr.reduce((acc, curr) => {
     return acc + curr.totalPrice;
-  }, 0);
+  });
+  //ysh
+};
+
+export const totalShoppingBasket = (shoppingBasketArr) => {
+  //keeran
+  return shoppingBasketArr.reduce((accum, curr) => {
+    return accum + curr.totalPrice;
+  }, 0);   //질문: 여기서 0은 accur디폴트 값인가요? 않줘도 되나요? 문법에서..
+  //초기값--0 정아씨가 얘기해줌
+
+  //keeran
 
   // Write code here
 };
-
 /* Advanced Challenges */
 
 /**
@@ -112,12 +156,16 @@ export const totalShoppingBasket = (shoppingBasketArr) => {
  * @returns {{id: number, name: string, ingredients: string[], country: string}[]} An array of cleaned meal objects
  */
 export const getImportantKeys = (mealsArr) => {
-  const cleanMealArr = mealsArr.map((meal) => {
-    const { timeStamp, userCreated, ...rest } = meal;
-    const cleanMeal = { ...rest };
-    return cleanMeal;
-  });
-  return cleanMealArr;
+  //oscar
+ 
+    const cleanMealArr = mealsArr.map((meal) => {
+      const { timeStamp, userCreated, ...rest } = meal;
+      const cleanMeal = { ...rest };
+      return cleanMeal;
+    });
+    return cleanMealArr;
+   //oscar
+//잘 이해는 되는데, 문제가 이해는 되는데.. 문법 구문쓰는것.. 어디서 볼수 있는지? 
   // Write code here
 };
 
@@ -132,18 +180,17 @@ export const getImportantKeys = (mealsArr) => {
  * @returns {{id: number, name: string, ingredients: string[], country: string, isVegetarian: boolean, timeToCook: number}[]}
  */
 export const setImportantKeys = (mealsArr) => {
-  return mealsArr.map((meal) => {
-    
+  //keeran
+  return mealsArr.map(meal => {
     const retMeal = { ...meal };
-    const {isVegetarian, timeToCook } = retMeal ;
 
-    if (!isVegetarian) 
-    retMeal.isVegetarian = false;
-    
-    if (!timeToCook)
-    retMeal.timeToCook = 15;
+    const mealKeys = Object.keys(meal);
+    if (!mealKeys.includes("isVegetarian")) retMeal.isVegetarian = false;
+    if (!mealKeys.includes("timeToCook")) retMeal.timeToCook = 15;
+
     return retMeal;
-  })
+  });
+  //keeran   //문제도 풀이도 잘 이해가 않됨
   // Write code here
 };
 
@@ -176,18 +223,28 @@ export const setImportantKeys = (mealsArr) => {
  * }[]} A Cleaned array of cocktail data
  */
 export const cleanCocktailResponseData = (cocktailData) => {
+  //jack
   return cocktailData.map((cocktailObj) => {
-    const { idDrink, strDrink, strCategory, strAlcoholic, strInstructions, ...rest } = cocktailObj;
-    const ingredientsArr = Object.values(rest).filter((ingredients) => ingredients );
-    return {id: idDrink,
-            drink: strDrink,
-            category: strCategory,
-            alcoholic: strAlcoholic,
-            instructions: strInstructions,
-            ingredients: ingredientsArr,
+    const {
+     idDrink,
+     strDrink,
+     strCategory,
+     strAlcoholic,
+     strInstructions,
+     ...rest
+    } = cocktailObj;
+    const ingredientsArr = Object.values(rest).filter(
+     (ingredient) => ingredient
+    );
+    return {
+     id: idDrink,
+     drink: strDrink,
+     category: strCategory,
+     alcoholic: strAlcoholic,
+     instructions: strInstructions,
+     ingredients: ingredientsArr,
     };
-
-  });
-
+   });
+  //jack
   // Write code here
 };
