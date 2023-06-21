@@ -21,7 +21,10 @@
  * @return {number} The price of the piece of furniture
  */
 export const getFurniturePrice = (furniture) => {
+  /* Write code here */
+  //ysh
     return furniture.price;
+  
 };
 
 /**
@@ -32,9 +35,22 @@ export const getFurniturePrice = (furniture) => {
  * @returns {{name: string, price: number, location: string}} furniture - A furniture object from the catalogue
  */
 export const setFurnitureStoreLocation = (furniture, location) => {
-    furniture.location = location;
-    return furniture;
-};
+//ysh
+  const updatedFurniture = Object.assign({}, furniture);
+  updatedFurniture.location = location;
+  return updatedFurniture;
+}
+//ysh
+  // return {
+  //   ...furniture, 
+  //   location : location
+  // }
+  // }
+//ysh  
+//roche
+// furniture.location = location;
+// return furniture;
+//roche
 
 /**
  * A function which takes a selection of arguments relating to a space ship and uses them
@@ -46,18 +62,17 @@ export const setFurnitureStoreLocation = (furniture, location) => {
  * @param {boolean} canTravelSolarSystems The ability for the space ship to travel to different solar systems
  * @returns {{name: string, noOfSeats: number, engineType: string, canTravelSolarSystems: boolean}} spaceship - The space ship object
  */
-export const makeSpaceship = (
-    name,
-    noOfSeats,
-    engineType,
-    canTravelSolarSystems
-) => {
-    return {
-        name,
-        noOfSeats,
-        engineType,
-        canTravelSolarSystems,
-    };
+export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems) => {
+  /* Write code here */
+  //ysh
+  return {
+    name: name,
+    noOfSeats : noOfSeats,
+    engineType : engineType,
+    canTravelSolarSystems : canTravelSolarSystems
+
+  };
+  //ysh
 };
 
 /* Intermediate Challenges */
@@ -69,13 +84,20 @@ export const makeSpaceship = (
  * @param {string} username - A username to attach
  * @returns {{name: string, username: string}} User - The user object with the same username or a new one
  */
-export const setUserName = (user, username) => {
-    const objUserName = user.username;
+// export const setUserName = (user, username) => {
+  /* Write code here */
+  //kenny
+  export const setUserName = (user, username) => {
+    const objUserName = user.username
     if (!objUserName) {
-        user.username = username;
+      user.username = username
+      return user
+    } else {
+      return user
     }
-    return user;
-};
+  };
+  //kenny
+// };
 
 /**
  * A function which takes a customer object from the database and returns the same object where the name has been
@@ -85,11 +107,14 @@ export const setUserName = (user, username) => {
  * @returns {{fullName: string, firstName: string, lastName: string}} A customer object from the database with the name separated into first and last
  */
 export const splitFullNameToFirstAndLast = (customer) => {
-    const { fullName } = customer;
+  //kai
+  const { fullName } = customer;
     const separateNames = fullName.split(" "); // turns into array
     const [firstName, lastName] = separateNames; // get the value from the separateNames array
     const updatedCustomer = { fullName, firstName, lastName };
     return updatedCustomer;
+  //kai
+  /* Write code here */
 };
 
 /**
@@ -102,7 +127,10 @@ export const splitFullNameToFirstAndLast = (customer) => {
  * @returns {any} value - The value you have accessed on the object
  */
 export const accessGivenKey = (object, key) => {
-    return object[key];
+  /* Write code here */
+  //inga
+  return object[key]
+  //inga
 };
 
 /* Advanced Challenges */
@@ -115,11 +143,17 @@ export const accessGivenKey = (object, key) => {
  * @returns {string} An address string for a shipping label
  */
 export const getUserAddress = (user) => {
+  //janet
+  
+    /* Write code here */
     const { address, ...rest } = user;
-    // const { line1, line2, city, postcode } = address;
+    const { line1, line2, city, postcode } = address;
     let addressArr = Object.values(address);
-    let addressString = addressArr.join(" ");
+    let addressString = addressArr.join(' ');
     return addressString;
+  
+  //janet
+  /* Write code here */
 };
 
 /**
@@ -131,16 +165,18 @@ export const getUserAddress = (user) => {
  * @return {{id: number, name: string, allergies: string[], safeAllergens: string[]}} customer
  */
 export const setSafeAllergens = (customer, allergenList) => {
-    const { allergies } = customer;
+  const {allergies} = customer
 
-    const safe = allergenList.filter((item) => {
-        return !allergies.includes(item);
-    }); //filters allergiesList array to keep only the ones that are not on allergies array
-    console.log(safe);
-    customer.safeAllergens = safe;
-    console.log(customer.safeAllergens);
+  const safe = allergenList.filter((item) => {
+    return !allergies.includes(item);
+  }); //filters allergiesList array to keep only the ones that are not on allergies array 
+ console.log(safe);
+ customer.safeAllergens = safe;
+ console.log (customer.safeAllergens);
 
-    return customer;
+  return customer;
+
+  /* Write code here */
 };
 
 /* Expert Challenge */
@@ -154,17 +190,21 @@ export const setSafeAllergens = (customer, allergenList) => {
  * @returns {{id: number, location: string, sku: string, name: string, price: number, isAvailable: boolean}}
  */
 export const mergeFurniture = (furnitureLocationData, furnitureProductData) => {
-    // const furnitureLocationArr = Object.entries(furnitureLocationData);
-    // const furnitureProductArr = Object.entries(furnitureProductData);
-    // const toReturnArr = furnitureProductArr.reduce((acc, curr) => {
-    //     console.log([1, 2] !== [1, 2], "array comparison");
-    //     if (curr !== furnitureLocationArr[0]) {
-    //         acc.push(curr);
-    //     }
-    //     return acc;
-    // }, furnitureLocationArr);
-    // return Object.fromEntries(toReturnArr);
-    const { id, ...rest } = furnitureLocationData;
+  /* Write code here */
+  //jack
+  const furnitureLocationArr = Object.entries(furnitureLocationData);
+ const furnitureProductArr = Object.entries(furnitureProductData);
+ const toReturnArr = furnitureProductArr.reduce((acc, curr) => {
+  if (curr !== furnitureLocationArr[0]) {
+   acc.push(curr);
+  }
+  return acc;
+ }, furnitureLocationArr);
+ return Object.fromEntries(toReturnArr);
+  //jack
+  //martyna
+  // const  {id, ...restr} = furnitureLocationData;
 
-    return { ...rest, ...furnitureProductData };
+  // return {...rest, ...furnitureProductData};
+  // //martyna
 };

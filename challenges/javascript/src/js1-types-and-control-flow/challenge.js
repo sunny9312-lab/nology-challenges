@@ -19,7 +19,8 @@ const firstName = "John";
 const lastName = "Smith";
 
 export const createFullName = () => {
-   return firstName + " " + lastName;
+    // Write your code here
+    return `${firstName} ${lastName}`;
 };
 
 /**
@@ -32,20 +33,15 @@ const largeNumber1 = 100;
 const largeNumber2 = 200;
 
 export const findLargestNumber = () => {
-  // Write your code here
-  // console.log(largeNumber1);
-  // console.log(largeNumber2);
-
-  if ( largeNumber1 > largeNumber2 ) {
-    return largeNumber1;
-  } else {
-    return largeNumber2;
-  }
-//condition ? this will happen if true:
-//martyna's
-// const largeNumber = largeNumber1 > largeNumber1 : largeNumber2;
-// return largeNumber;
-
+    // if (largeNumber1 > largeNumber2) {
+    //     return largeNumber1;
+    // } else {
+    //     return largeNumber2;
+    // }
+    // condition ? this will happen if true : this will happen if false
+    const largerNumber =
+        largeNumber1 > largeNumber2 ? largeNumber1 : largeNumber2;
+    return largerNumber;
 };
 
 /**
@@ -58,7 +54,7 @@ const addNumber1 = 12;
 const addNumber2 = 24;
 
 export const addNumbers = () => {
-  return addNumber1 + addNumber2;
+    return addNumber1 + addNumber2;
 };
 
 /* Intermediate Challenges */
@@ -72,9 +68,7 @@ export const addNumbers = () => {
 const password = "thisIsMyVeryLongPassword123456789";
 
 export const findLengthOfPassword = () => {
-  // Write your code here
-  //martyna's work
-  return password.length
+    return password.length;
 };
 
 /**
@@ -90,49 +84,39 @@ export const findLengthOfPassword = () => {
 const thing = "I am a thing";
 
 export const findType = () => {
- //oscar
- if (typeof thing === "string") {
-  return "This is a string";
-} else if (typeof thing === "number") {
-  return "This is a number";
-} else if (typeof thing === "boolean") {
-  return "This is a boolean";
-} else {
-  return "I don't know what this thing is";
-}
- //oscar
+    // if (typeof thing === "string") {
+    //     return "This is a string";
+    // } else if (typeof thing === "number") {
+    //     return "This is a number";
+    // } else if (typeof thing === "boolean") {
+    //     return "This is a boolean";
+    // } else {
+    //     return "I don't know what this thing is";
+    // }
+
+    // let typeOf = typeof thing;
+    // switch (typeOf) {
+    //     case "string":
+    //         return "This is a string";
+    //     case "number":
+    //         return "This is a number";
+    //     case "boolean":
+    //         return "This is a boolean";
+    //     default:
+    //         return "I don't know what this thing is";
+    // }
+
+    const typeOfThing = typeof thing;
+    if (
+        typeOfThing == "string" ||
+        typeOfThing == "boolean" ||
+        typeOfThing == "number"
+    ) {
+        return `This is a ${typeof thing}`;
+    } else {
+        return "I don't know what this thing is";
+    }
 };
-
-//kai
-// export const findType = () => {
-//   let typeOf = typeof thing;
-//   switch (typeOf) {
-//       case "string":
-//           return "This is a string";
-//           break;
-//       case "number":
-//           return "This is a number";
-//           break;
-//       case "boolean":
-//           return "This is a boolean";
-//           break;
-//       default:
-//           return "I don't know what this thing is";
-//   }
-// };
-
-//kai
-//ingq
-// export const findType = () => {
-//   const typeOfThing = typeof thing;
-//   if (typeOfThing == "string" || typeOfThing == "boolean" || typeOfThing == "number"){
-//   return `This is a ${typeof thing}`
-//   }
-//   else {
-//     return "I don't know what this thing is"
-//   }
-// };
-//inga
 
 /**
  * A function to programmatically decide if a name is suitable for a name tag.
@@ -144,14 +128,10 @@ export const findType = () => {
 const nameTagOption = "Timothy";
 
 export const getIsValidOnNameTag = () => {
-  // Write your code here
-  //matheo
-  //return nameTagOption.length <= 8 && nameTagOption.charAt(0) === //////nameTagOption.charAt(0).toUpperCase();
-  //matheo
-  return (
-    nameTagOption.length <= 8 && nameTagOption.charAt(0)) === nameTagOption.charAt(0).toUpperCase();
-  
-  
+    return (
+        nameTagOption.length <= 8 &&
+        nameTagOption.charAt(0) === nameTagOption.charAt(0).toUpperCase()
+    );
 };
 
 /* Advanced Challenges */
@@ -165,9 +145,8 @@ export const getIsValidOnNameTag = () => {
 const stringToConvert = "14.45";
 
 export const convertStringToNumber = () => {
-  // Write your code here
-  //jack
-  return parseFloat(stringToConvert)  
+    // return parseFloat(stringToConvert);
+    return +stringToConvert;
 };
 
 /**
@@ -181,12 +160,9 @@ export const convertStringToNumber = () => {
 const stringWithUppercaseLetters = "I Am A String With Uppercase Letters";
 
 export const getHasUppercaseLetters = () => {
-  // Write your code here
-  //jungah
-  const regex = /[A-Z]/g;
-  return stringWithUppercaseLetters.match(regex).length > 0;
-  //jack
-  //return /[A-Z]/.test(stringWithUppercaseLetters);
+    // const regex = /[A-Z]/g;
+    // return stringWithUppercaseLetters.match(regex).length > 0;
+    return /[A-Z]/.test(stringWithUppercaseLetters);
 };
 
 /* Expert Challenge */
@@ -200,9 +176,11 @@ export const getHasUppercaseLetters = () => {
 const pascalCaseVariableName = "IWantToBeSnakeCase";
 
 export const convertPascalCaseToSnakeCase = () => {
-  // Write your code here
-  //roche
-  const makeFirstLetterLowerCase = pascalCaseVariableName.charAt(0).toLowerCase() + pascalCaseVariableName.slice(1);
+    const makeFirstLetterLowerCase =
+        pascalCaseVariableName.charAt(0).toLowerCase() +
+        pascalCaseVariableName.slice(1);
 
-  return makeFirstLetterLowerCase.replace(/([A-Z])/g, "_$1").toLowerCase();
+    console.log(makeFirstLetterLowerCase); // _i_want_to...
+
+    return makeFirstLetterLowerCase.replace(/([A-Z])/g, "_$1").toLowerCase();
 };

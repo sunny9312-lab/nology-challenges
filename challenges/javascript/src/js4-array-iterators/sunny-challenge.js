@@ -20,10 +20,21 @@
  * @param {boolean[]} booleanArr [true, true, false, false, true]
  * @return {boolean[]} [true, true, true]
  */
-
+//ysh
 export const removeFalseValues = (booleanArr) => {
-    return booleanArr.filter((value) => value);
+  const returnArr = [];
+  for (let i = 0; i < booleanArr.length ; i++) {
+    
+    if (booleanArr[i] === true) {
+      returnArr.push(booleanArr[i]);
+    }
+  }
+  return returnArr;
 };
+//ysh
+// export const removeFalseValues = (booleanArr) => {
+//   return;
+// };
 
 /**
  * A function that takes an array of numbers that are between 0 - 1.
@@ -34,8 +45,7 @@ export const removeFalseValues = (booleanArr) => {
  */
 
 export const createPercentageList = (numbersArr) => {
-    let newNumbersArr = numbersArr.map((number) => number * 100 + "%");
-    return newNumbersArr;
+  return;
 };
 
 /**
@@ -48,10 +58,7 @@ export const createPercentageList = (numbersArr) => {
  */
 
 export const createListOfPoessessions = (possessionsArr, name) => {
-    const namePosessions = possessionsArr.map((item) => {
-        return `${name} ${item}`;
-    });
-    return namePosessions;
+  return;
 };
 
 /**
@@ -76,17 +83,7 @@ export const createListOfPoessessions = (possessionsArr, name) => {
  */
 
 export const convertStringToNumbersArray = (numberString) => {
-    if (numberString.includes("+")) {
-        // how would split method work on a string that doesn't have a +?
-        let numberArr = numberString.split("+");
-        let parsedIntArr = numberArr.map((numberStr) => parseInt(numberStr));
-        return parsedIntArr;
-    } else {
-        let numberArr = [];
-        numberArr.push(numberString);
-        let parsedIntArr = numberArr.map((numberStr) => parseInt(numberStr));
-        return parsedIntArr;
-    }
+  return;
 };
 
 /**
@@ -98,15 +95,7 @@ export const convertStringToNumbersArray = (numberString) => {
  */
 
 export const createOddEvenArray = (numberString) => {
-    const numbers = convertStringToNumbersArray(numberString);
-    const resultArr = numbers.map((num) => {
-        if (num % 2 === 0) {
-            return "even";
-        } else {
-            return "odd";
-        }
-    });
-    return resultArr;
+  return;
 };
 
 /**
@@ -119,7 +108,7 @@ export const createOddEvenArray = (numberString) => {
  */
 
 export const filterBooksBySearch = (booksArr, searchTerm) => {
-    return booksArr.filter((book) => book.includes(searchTerm));
+  return;
 };
 
 /**
@@ -139,14 +128,16 @@ export const filterBooksBySearch = (booksArr, searchTerm) => {
  */
 
 export const formatStringArray = (stringArr) => {
-    const cleanedArr = stringArr.map((string) => {
-        const cleanStr = string.trim().toLowerCase();
-        return cleanStr;
-    });
+  const cleanedArr = stringArr.forEach((string) => {
+    const cleanStr = string.trim().toLowerCase();
+    return cleanStr;
+  });
 
-    const joinedString = cleanedArr.join("+");
+  // console.log(???)
 
-    return joinedString;
+  const joinedString = cleanedArr.join("+");
+
+  return joinedString;
 };
 
 /**
@@ -163,15 +154,7 @@ export const formatStringArray = (stringArr) => {
  */
 
 export const formatString = (string) => {
-    let cleanString = string.replace(/[^A-Z]/gi, "").split("");
-    // let cleanString = string.match(/[A-Z]/gi);
-    console.log(cleanString, "clean str");
-    return cleanString.reduce((result, letter, index) => {
-        index % 2 === 0
-            ? result.push(letter.toUpperCase())
-            : result.push(letter.toLowerCase());
-        return result;
-    }, []);
+  return;
 };
 
 /**
@@ -198,20 +181,5 @@ export const formatString = (string) => {
  */
 
 export const fizzBuzz = (mixedArray) => {
-    let cleanArray = mixedArray.filter(
-        (element) => element > 0 || Number(element) > 0
-    );
-
-    return cleanArray.reduce((result, number) => {
-        if (Number(number) % 15 == 0) {
-            result.push("FizzBuzz");
-        } else if (Number(number) % 3 == 0) {
-            result.push("Fizz");
-        } else if (Number(number) % 5 == 0) {
-            result.push("Buzz");
-        } else {
-            result.push(`${number}`);
-        }
-        return result;
-    }, []);
+  return;
 };
