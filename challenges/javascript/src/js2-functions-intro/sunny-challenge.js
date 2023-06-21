@@ -17,9 +17,12 @@
  * @returns {string} John Smith
  */
 export const createFullName = (firstName, lastName) => {
-    // return firstName + " " + lastName;
-    return `${firstName} ${lastName}`;
+  console.log("firstName" + " " + firstName);
+  return firstName + " " + lastName;
 };
+//jungah
+//return firstName + " " + lastName;
+// return `${firstName} ${lastName}`; 
 
 /**
  * A function that takes two numbers as an input and returns the smallest one.
@@ -29,9 +32,20 @@ export const createFullName = (firstName, lastName) => {
  * @param {number} number2 200
  * @returns {number} 100
  */
-export const findSmallestNumber = (a, b) => {
-    return a > b ? b : a;
+export const findSmallestNumber = (number1, number2) => {
+  if (number1 > number2) {
+    return number2;
+  } else {
+    return number1;
+  }
 };
+
+
+
+//inga
+//export const findsmallestnumber =(a, b) => {
+//return(a>b? b : a)
+//}
 
 /**
  * A function that takes two numbers as input, multiplies them together and returns the product.
@@ -41,8 +55,21 @@ export const findSmallestNumber = (a, b) => {
  * @param {number} number2 6
  * @returns {number} 18
  */
+
+let number1;
+let number2;
+let number;
+
+// export const multiplyNumbers = (number1, number2) => {
+//   return number = number1 * number2;
+  
+// };
+//kai
 export const multiplyNumbers = (number1, number2) => number1 * number2;
 
+// export const multiplyNumbers = (number1, number2) => {
+//   /* Write your code here */
+// };
 /* Intermediate Challenges */
 
 /**
@@ -55,17 +82,30 @@ export const multiplyNumbers = (number1, number2) => number1 * number2;
  * @param {number} highScore 325
  * @returns {string} "You got a new high score!" | "So close!" | "Better luck next time!"
  */
+// export const checkIfNewHighScore = (score, highScore) => {
+//   if score > highScore {
+//     return "You got a new high score!";
+//   } else if score < highScore {
+//        return "So close!";
+//   } else {
+//     return "Better luck next time!";
+//   }
+  
+// };
+//roche
 export const checkIfNewHighScore = (score, highScore) => {
-    /* Write your code here */
-    if (score > highScore) {
-        return "You got a new high score!";
-    } else if (score == highScore) {
-        return "So close!";
-    } else {
-        return "Better luck next time!";
-    }
+  /* Write your code here */
+  if (score > highScore) {
+    return "You got a new high score!";
+  }
+  else if (score == highScore) {
+    return "So close!";
+
+  } else {
+    return "Better luck next time!";
+  }
 };
-checkIfNewHighScore(300, 325);
+checkIfNewHighScore(300 , 325);
 
 /**
  * A function that converts a temperature a in celsius to fahrenheit and outputs it in a string format -> "15 degrees celsius is 59 degrees fahrenheit".
@@ -73,10 +113,16 @@ checkIfNewHighScore(300, 325);
  * @param {number} tempInCelsius 15
  * @returns {string} "15 degrees celsius is 59 degrees fahrenheit"
  */
-export const celsiusToFahrenheit = (tempInCelsius) => {
-    let tempInFahrenheit = tempInCelsius * 1.8 + 32;
-    return `${tempInCelsius} degrees celsius is ${tempInFahrenheit} degrees fahrenheit`;
-};
+ export const celsiusToFahrenheit = (tempInCelsius) => {
+   let tempInFahrenheit = (tempInCelsius * 1.8) + 32
+   //jack
+  return `${tempInCelsius} degrees celsius is ${tempInFahrenheit} degrees fahrenheit`
+
+ };
+
+//jacek
+
+
 
 /**
  * A function that calculates the number of snickers needed for the rest of your life based on the number you eat per day,
@@ -88,7 +134,11 @@ export const celsiusToFahrenheit = (tempInCelsius) => {
  * @returns {number} 47450
  */
 export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
+  /* Write your code here */
+  //sunpreet
+ 
     return snickersPerDay * (maxAge - age) * 365;
+ 
 };
 
 /* Advanced Challenges */
@@ -107,58 +157,63 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  * @param {number} score 0 - 100
  * @returns {string} A - F | Score unavailable
  */
-// export const getGrade = (score) => {
-//     if (typeof score !== "number" || isNaN(score)) {
-//         return "Score unavailable";
-//     } else if (score >= 80 && score <= 100) {
-//         return "A";
-//     } else if (score >= 70 && score < 80) {
-//         return "B";
-//     } else if (score >= 60 && score < 70) {
-//         return "C";
-//     } else if (score >= 50 && score < 60) {
-//         return "D";
-//     } else if (score >= 40 && score < 50) {
-//         return "E";
-//     } else if (score >= 0 && score < 40) {
-//         return "F";
-//     } else {
-//         return "Score unavailable";
-//     }
-// };
-
 export const getGrade = (score) => {
-    let validScore = 0;
-    let invalid = "Score unavailable";
-    if (typeof score === "number") {
-        if (score <= 100) {
-            if (score >= 0) {
-                validScore = score;
-            } else {
-                return invalid;
-            }
-        } else {
-            return invalid;
-        }
-    } else {
-        return invalid;
-    }
-    // if(score > 100 || score < 0 || typeof score !== "number")
-
-    if (validScore >= 80) {
-        return "A";
-    } else if (validScore >= 70) {
-        return "B";
-    } else if (validScore >= 60) {
-        return "C";
-    } else if (validScore >= 50) {
-        return "D";
-    } else if (validScore >= 40) {
-        return "E";
-    } else if (validScore >= 0) {
-        return "F";
-    }
+  /* Write your code here */
+  //oscar
+  if (typeof score !== "number" || isNaN(score)) {
+    return "Score unavailable";
+  } else if (score >= 80 && score <= 100) {
+    return "A";
+  } else if (score >= 70 && score < 80) {
+    return "B";
+  } else if (score >= 60 && score < 70) {
+    return "C";
+  } else if (score >= 50 && score < 60) {
+    return "D";
+  } else if (score >= 40 && score < 50) {
+    return "E";
+  } else if (score >= 0 && score < 40) {
+    return "F";
+  } else {
+    return "Score unavailable";
+  }
 };
+
+//kenny
+// export const getGrade = (score) => {
+//   let validScore = 0
+//   let invalid = "Score unavailable"
+//   if (typeof score === "number") {
+//     if (score <= 100) {
+//       if (score >= 0) {
+//         validScore = score
+//       } else {
+//         return invalid
+//       }
+//     } else {
+//       return invalid
+//     }
+//   } else {
+//     return invalid
+//   }
+
+//   if (validScore>= 80) {
+//     return "A"
+//   } else if (validScore >= 70) {
+//     return "B"
+//   } else if (validScore >= 60) {
+//     return "C"
+//   } else if (validScore >= 50) {
+//     return "D"
+//   } else if (validScore >= 40) {
+//     return "E"
+//   } else if (validScore >= 0) {
+//     return "F"
+//   } 
+// }
+
+
+
 
 /**
  * A function that find the area of a circle to 2 decimal places.
@@ -167,7 +222,10 @@ export const getGrade = (score) => {
  * @returns {number} 28.27
  */
 export const calculateAreaOfCircle = (radius) => {
-    return +(Math.PI * radius ** 2).toFixed(2);
+  /* Write your code here */
+  //inga
+  return (+(Math.PI*radius**2).toFixed(2))
+  //
 };
 
 /* Expert Challenge */
@@ -187,22 +245,24 @@ export const calculateAreaOfCircle = (radius) => {
  * @param {number} score 0 - 100
  * @param {string} name John
  */
+
+//janet
 export const getStudentSummary = (score, name) => {
-    /* Write your code here */
-    switch (getGrade(score)) {
-        case "A":
-            return `Congratulations ${name}! You achieved a grade of A.`;
-        case "B":
-            return `Well done ${name}! You achieved a grade of B.`;
-        case "C":
-            return `Nicely done ${name}! You achieved a grade of C.`;
-        case "D":
-            return `That's okay ${name}. You achieved a grade of D.`;
-        case "E":
-            return `Too bad ${name}. You achieved a grade of E.`;
-        case "F":
-            return `Sorry ${name}. You achieved a grade of F. There's always next year.`;
-        default:
-            return `My apologies ${name}, there's been an error in processing your grade.`;
-    }
+  /* Write your code here */
+  switch (getGrade(score)) {
+    case 'A':
+      return `Congratulations ${name}! You achieved a grade of A.`;
+    case 'B':
+      return `Well done ${name}! You achieved a grade of B.`;
+    case 'C':
+      return `Nicely done ${name}! You achieved a grade of C.`;
+    case 'D':
+      return `That's okay ${name}. You achieved a grade of D.`;
+    case 'E':
+      return `Too bad ${name}. You achieved a grade of E.`;
+    case 'F':
+      return `Sorry ${name}. You achieved a grade of F. There's always next year.`;
+    default:
+      return `My apologies ${name}, there's been an error in processing your grade.`;
+  }
 };
