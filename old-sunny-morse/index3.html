@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Morse Code Translator</title>
+  <script>
+    const morseCode = {
+      A: ".-",
+      B: "-...",
+      C: "-.-.",
+      D: "-..",
+      E: ".",
+      F: "..-.",
+      G: "--.",
+      H: "....",
+      I: "..",
+      J: ".---",
+      K: "-.-",
+      L: ".-..",
+      M: "--",
+      N: "-.",
+      O: "---",
+      P: ".--.",
+      Q: "--.-",
+      R: ".-.",
+      S: "...",
+      T: "-",
+      U: "..-",
+      V: "...-",
+      W: ".--",
+      X: "-..-",
+      Y: "-.--",
+      Z: "--..",
+      " ": "/"
+    };
+
+    const translateToMorse = (text) => {
+      const sanitizedText = text.toUpperCase();
+      const translatedText = [];
+
+      for (let i = 0; i < sanitizedText.length; i++) {
+        const char = sanitizedText[i];
+        const morseChar = morseCode[char];
+
+        if (morseChar) {
+          translatedText.push(morseChar);
+        }
+      }
+
+      return translatedText.join(" ");
+    };
+
+    const translateToText = (morse) => {
+      const words = morse.split(" / ");
+      let translatedText = "";
+
+      for (let i = 0; i < words.length; i++) {
+        const letters = words[i].split(" ");
+        let translatedWord = "";
+
+        for (let j = 0; j < letters.length; j++) {
+          const letter = letters[j];
+          const translatedLetter = Object.keys(morseCode).find((key) => morseCode[key] === letter);
+
+          if (translatedLetter) {
+            translatedWord += translatedLetter;
+          }
+        }
+
+        translatedText += translatedWord + " ";
+      }
+
+      return translatedText.trim();
+    };
+
+    const handleTranslate = (direction) => {
+      const input = document.getElementById(direction === "textToMorse" ? "text-input" : "morse-input");
+      const output = document.getElementById(direction === "textToMorse" ? "morse-output" : "text-output");
+
+      if (direction === "textToMorse") {
+        const text = input.value;
+        const morseTranslation = translateToMorse(text);
+        output.textContent = morseTranslation;
+      } else if (direction === "morseToText") {
+        const morse = input.value;
+        const textTranslation = translateToText(morse);
+        output.textContent = textTranslation;
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>Morse Code Translator</h1>
+
+  <h2>Translate from Text to Morse Code:</h2>
+  <form onsubmit="handleTranslate('textToMorse'); event.preventDefault();">
+    <label for="text-input">Enter text:</label>
+    <input type="text" id="text-input" required>
+    <button type="submit">Translate to Morse</button>
+  </form>
+  <h3>Translated Morse Code:</h3>
+  <p id="morse-output"></p>
+
+  <h2>Translate from Morse Code to Text:</h2>
+  <form onsubmit="handleTranslate('morseToText'); event.preventDefault();">
+    <label for="morse-input">Enter Morse code:</label>
+    <input type="text" id="morse-input" required>
+    <button type="submit">Translate to Text</button>
+  </form>
+  <h3>Translated Text:</h3>
+  <p id="text-output"></p>
+</body>
+</html>

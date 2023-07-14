@@ -1,0 +1,15 @@
+.heading {
+    color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  

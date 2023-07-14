@@ -1,0 +1,12 @@
+[hidden] {
+    display: none;
+}
+
+a{
+    text-decoration: none;
+    color: blue;
+    &:visited{
+        color: black;
+    }
+}
+// normaized css

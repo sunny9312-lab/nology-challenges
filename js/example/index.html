@@ -1,0 +1,13 @@
+const user = 'remi';
+const userSession = ['home', 'settings', 'home', 'about'];
+
+const combine = (username, history) => {
+    return {
+        username,
+        history,
+    };
+};
+const userSession = combine(user, userSession);
+
+<div class="button button--important">Ok</div>
+<div class="button">Cancel</div>
