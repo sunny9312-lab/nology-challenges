@@ -1,0 +1,48 @@
+.card {
+    position: relative;
+    border: 3px solid black;
+    width: 300px;
+    height :300px;
+    transition: all ease-in-out 0.2s;
+    margin: 10px;
+    padding: 10px;
+    &:hover {
+      transform: scale(1.05);
+      &::before {
+        opacity: 0;
+      }
+      h3,
+      h4,
+      h5 {
+        opacity: 0;
+      }
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top:0px;
+      right: 0px;
+      bottom: 0px;
+      left:0px;
+      background-color: black;
+      opacity: 0.5;
+    }
+    &__heading {
+      position:relative;
+      color: white;
+      opacity: 1;
+      margin-left: 1em;
+      z-index: 1;
+    }
+  }
+  
+  .cloth {
+    width : 50px;
+    height: 50px;
+  }
+  
+  // .heading {
+  //   color: #1ba31b;
+  // }
+  

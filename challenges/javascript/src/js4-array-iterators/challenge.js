@@ -22,7 +22,9 @@
  */
 
 export const removeFalseValues = (booleanArr) => {
-    return booleanArr.filter((value) => value);
+    return booleanArr.filter((value) => value);  //각각의 엘리먼트가 true 이면
+    //(el => el === true);
+
 };
 
 /**
@@ -32,6 +34,7 @@ export const removeFalseValues = (booleanArr) => {
  * @param {number[]} numbersArr [1, .5, .7, .25]
  * @return {string[]} ["100%", "50%", "70%", "25%"]
  */
+//map 
 
 export const createPercentageList = (numbersArr) => {
     let newNumbersArr = numbersArr.map((number) => number * 100 + "%");
@@ -47,7 +50,7 @@ export const createPercentageList = (numbersArr) => {
  * @return {string[]} ["disco shoes", "disco jacket", "disco belt"]
  */
 
-export const createListOfPoessessions = (possessionsArr, name) => {
+export const createListOfPoessessions = (possessionsArr, name) => {   // (array, prefic)
     const namePosessions = possessionsArr.map((item) => {
         return `${name} ${item}`;
     });
@@ -73,6 +76,11 @@ export const createListOfPoessessions = (possessionsArr, name) => {
  *
  * @param {string} numberString - "1+2+3+4+5"
  * @return {number[]} [1, 2, 3, 4, 5]
+ * 
+ * const stringToArr = numberString.split("+");
+  const stringToNum = stringToArr.map((str) => +str);
+  return stringToNum;
+ * 
  */
 
 export const convertStringToNumbersArray = (numberString) => {
@@ -88,6 +96,10 @@ export const convertStringToNumbersArray = (numberString) => {
         return parsedIntArr;
     }
 };
+
+// const stringToArr = numberString.split("+");
+//   const stringToNum = stringToArr.map((str) => +str);
+//   return stringToNum;
 
 /**
  * A function that takes a string of numbers joined with a "+" and creates a new array based on if the number is even or odd.
@@ -215,3 +227,14 @@ export const fizzBuzz = (mixedArray) => {
         return result;
     }, []);
 };
+//정아씨..
+// return mixedArray
+//     .filter((item) => item > 0)
+//     .map((item) => {
+//       let str = "";
+//       if (!(item % 3)) str += "Fizz";
+//       if (!(item % 5)) str += "Buzz";
+//       if (item % 3 && item % 5) str += item;
+//       return str;
+//     }); 
+//정아씨

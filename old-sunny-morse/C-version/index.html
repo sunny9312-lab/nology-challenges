@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Morse Code Translator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <h1>Morse Code Translator</h1>
+
+  <h2>Translate from Text to Morse Code:</h2>
+  <form id="textToMorseForm">
+    <label for="text-input">Enter text:</label>
+    <input type="text" id="text-input" required>
+    <button type="submit">Translate to Morse</button>
+  </form>
+  <h3>Translated Morse Code:</h3>
+  <p id="morse-output"></p>
+
+  <h2>Translate from Morse Code to Text:</h2>
+  <form id="morseToTextForm">
+    <label for="morse-input">Enter Morse code:</label>
+    <input type="text" id="morse-input" required>
+    <button type="submit">Translate to Text</button>
+  </form>
+  <h3>Translated Text:</h3>
+  <p id="text-output"></p>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Morse Code Translator</title>
+  <link rel="stylesheet" type="text/css" href="s-style.css">
+</head>
+<body>
+  <h1>Morse Code Translator</h1>
+
+  <div class="translation-container">
+    <textarea id="input-text" placeholder="Enter text or Morse code"></textarea>
+    <div class="buttons">
+      <button id="translate-to-morse">Translate to Morse</button>
+      <button id="translate-to-text">Translate to Text</button>
+    </div>
+    <textarea id="output-text" placeholder="Translation"></textarea>
+  </div>
+
+  <script src="s-script.js"></script>
+  <script>
+    const morseCode = {
+      'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
+      'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
+      'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..', '0': '-----', '1': '.----', '2': '..---',
+      '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '.': '.-.-.-',
+      ',': '--..--', '?': '..--..', "'": '.----.', '!': '-.-.--', '/': '-..-.', '(': '-.--.', ')': '-.--.-', '&': '.-...',
+      ':': '---...', ';': '-.-.-.', '=': '-...-', '+': '.-.-.', '-': '-....-', '_': '..--.-', '"': '.-..-.', '$': '...-..-',
+      '@': '.--.-.', ' ': '/'
+    };
+
+    const translateToMorse = (text) => {
+      const sanitizedText = text.toUpperCase();
+      const translatedText = [];
+
+      for (let i = 0; i < sanitizedText.length; i++) {
+        const char = sanitizedText[i];
+        const morseChar = morseCode[char];
+
+        if (morseChar) {
+          translatedText.push(morseChar);
+        }
+      }
+
+      return translatedText.join(' ');
+    };
+
+    const translateToText = (morse) => {
+      const words = morse.split(' / ');
+      let translatedText = '';
+
+      for (let i = 0; i < words.length; i++) {
+        const letters = words[i].split(' ');
+        let translatedWord = '';
+
+        for (let j = 0; j < letters.length; j++) {
+          const letter = letters[j];
+          const translatedLetter = Object.keys(morseCode).find((key) => morseCode[key] === letter);
+
+          if (translatedLetter) {
+            translatedWord += translatedLetter;
+          }
+        }
+
+        translatedText += translatedWord + ' ';
+      }
+
+      return translatedText.trim();
+    };
+
+    // Get the necessary DOM elements
+    const inputText = document.getElementById('input-text');
+    const outputText = document.getElementById('output-text');
+    const translateToMorseButton = document.getElementById('translate-to-morse');
+    const translateToTextButton = document.getElementById('translate-to-text');
+
+    // Add event listeners to the translation buttons
+    translateToMorseButton.addEventListener('click', () => {
+      const input = inputText.value;
+      const morseTranslation = translateToMorse(input);
+      outputText.value = morseTranslation;
+    });
+
+    translateToTextButton.addEventListener('click', () => {
+      const input = inputText.value;
+      const textTranslation = translateToText(input);
+      outputText.value = textTranslation;
+    });
+  </script>
+</body>
+</html>

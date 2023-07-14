@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Morse Code Translator</title>
+  <script>
+    // Morse code mappings
+    const morseCode = {
+      A: ".-",
+      B: "-...",
+      C: "-.-.",
+      D: "-..",
+      E: ".",
+      F: "..-.",
+      G: "--.",
+      H: "....",
+      I: "..",
+      J: ".---",
+      K: "-.-",
+      L: ".-..",
+      M: "--",
+      N: "-.",
+      O: "---",
+      P: ".--.",
+      Q: "--.-",
+      R: ".-.",
+      S: "...",
+      T: "-",
+      U: "..-",
+      V: "...-",
+      W: ".--",
+      X: "-..-",
+      Y: "-.--",
+      Z: "--..",
+      " ": "/"
+    };
+
+    // Translate text to Morse code
+    const translateToMorse = (text) => {
+      const sanitizedText = text.toUpperCase();
+      const translatedText = [];
+
+      for (let i = 0; i < sanitizedText.length; i++) {
+        const char = sanitizedText[i];
+        const morseChar = morseCode[char];
+
+        if (morseChar) {
+          translatedText.push(morseChar);
+        }
+      }
+
+      return translatedText.join(" ");
+    };
+
+    // Handle form submission
+    const handleSubmit = (event) => {
+      event.preventDefault();
+
+      // Get the input value
+      const textInput = document.getElementById("text-input");
+      const text = textInput.value;
+
+      // Translate text to Morse code
+      const morseTranslation = translateToMorse(text);
+
+      // Display the Morse code result
+      const morseOutput = document.getElementById("morse-output");
+      morseOutput.textContent = morseTranslation;
+    };
+  </script>
+</head>
+<body>
+  <h1>Morse Code Translator</h1>
+  <form onsubmit="handleSubmit(event)">
+    <label for="text-input">Enter text:</label>
+    <input type="text" id="text-input" required>
+    <button type="submit">Translate</button>
+  </form>
+  <h2>Translated Morse Code:</h2>
+  <p id="morse-output"></p>
+</body>
+</html>
