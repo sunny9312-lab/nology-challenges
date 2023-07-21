@@ -3,8 +3,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './schema';
 import { createMovie } from '../../services/movies-service';
+import { useNavigate } from 'react-router-dom';
 
-const NewMovieForm = ({ updateMovieList }) => {
+const NewMovieForm = () => {
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
@@ -13,9 +15,12 @@ const NewMovieForm = ({ updateMovieList }) => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const formSubmit = (formData) => {
-    createMovie(formData).then((response) => updateMovieList(response));
-    reset();
+    createMovie(formData).then((movie) => {
+      navigate("/movies")
+    });
+    
   };
+
   return (
     <form onSubmit={handleSubmit(formSubmit)} className={styles.form}>
       <div className={styles.field}>
