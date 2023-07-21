@@ -1,23 +1,16 @@
 import styles from './MovieList.module.scss';
 import MovieCard from '../MovieCard/MovieCard';
 import { useEffect, useState } from 'react';
-import { onSnapshot, collection } from 'firebase/firestore';
-import { db } from '../../../config/firebase';
+import { getMovieSubscription } from '../../services/movies-service';
 
 const LiveMovieList = () => {
   const [movies, setMovies] = useState([]);
-  useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, 'movies'), (snapshot) => {
-      const movieData = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setMovies(movieData);
-    });
 
-    // clean up by unsubscribing
-    return () => unsubscribe();
+  useEffect(() => {
+    const unsub = getMovieSubscription(setMovies);
+    return () => unsub();
   }, []);
+
   return (
     <section className={styles.list}>
       {movies.map((movie) => (
