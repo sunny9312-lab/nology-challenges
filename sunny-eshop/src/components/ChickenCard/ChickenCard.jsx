@@ -1,12 +1,14 @@
+
+import { Link } from 'react-router-dom';
 import style from './ChickenCard.module.scss'
 
 const ChickenCard = ({chicken}) => {
-    const {menu, price, image} = chicken;
+    const {menu, price, id, image} = chicken;
   return (
     <div className={style.card}>
         <h2>{menu}</h2>
         <img className={style.card_image} src={image} alt={menu + 'poster'}/>
-
+        <Link to={`${id}`} state={chicken}><button>see more...</button></Link>
     </div>
     )
   
